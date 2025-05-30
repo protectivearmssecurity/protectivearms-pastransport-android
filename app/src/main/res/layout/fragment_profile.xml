@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.fragment.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/viewPaser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/profile"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_rounded_bg"
+        android:backgroundTint="@color/black"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:text="----"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sans_regular"
+            android:gravity="center"
+            android:text="----"
+            android:layout_gravity="center_horizontal"            android:textColor="@color/white70"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sans_regular"
+            android:gravity="center"
+            android:text="----"
+            android:layout_gravity="center_horizontal"            android:textColor="@color/white70"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/btnEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_25sdp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text='@string/edit_profile'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+        <TextView
+            android:id="@+id/btnDocuments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_25sdp"
+            android:background="@drawable/stroke_button_bg"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text='@string/documents'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black50">#80000000</color>
+    <color name="blur">#24141c</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white70">#B3FFFFFF</color>
+    <color name="white30">#4DFFFFFF</color>
+    <color name="white20">#33FFFFFF</color>
+    <color name="button_color">#5DC3F2</color>
+    <color name="orange">#FF9A03</color>
+    <color name="parrot">#45C80F</color>
+    <color name="green">#109758</color>
+    <color name="red">#E22828</color>
+    <color name="yellow">#FFC107</color>
+    <color name="et_bg">#E1E1E1</color>
+    <color name="transparent">#00000000</color>
+    <color name="success">#5cb85c</color>
+    <color name="decline_color">#FF0011</color>
+    <color name="blue">#0A8AF2</color>
+
+</resources>

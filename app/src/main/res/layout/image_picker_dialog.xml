@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    android:background="@color/white"
+    android:elevation="24dp"
+    android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Source"
+            android:gravity="center"
+            android:visibility="gone"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/sans_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="0.5dp"
+            android:background="@color/black50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <ImageView
+            android:id="@+id/ivCamera"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/icon_camera"
+            app:layout_constraintEnd_toStartOf="@+id/select_camera"
+            app:layout_constraintTop_toTopOf="@+id/select_camera"
+            app:layout_constraintBottom_toBottomOf="@+id/select_camera"/>
+
+        <TextView
+            android:id="@+id/select_camera"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Camera"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/black50"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_camera" />
+
+        <ImageView
+            android:id="@+id/ivGallery"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:src="@drawable/baseline_broken_image_24"
+            app:layout_constraintEnd_toStartOf="@+id/select_photo_library"
+            app:layout_constraintTop_toTopOf="@+id/select_photo_library"
+            app:layout_constraintBottom_toBottomOf="@+id/select_photo_library"/>
+
+
+        <TextView
+            android:id="@+id/select_photo_library"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Gallery"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/black50"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_photo_library" />
+
+        <ImageView
+            android:id="@+id/ivRemove"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/icon_delete"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/remove_photo"
+            app:layout_constraintTop_toTopOf="@+id/remove_photo"
+            app:layout_constraintBottom_toBottomOf="@+id/remove_photo"/>
+
+
+        <TextView
+            android:id="@+id/remove_photo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Remove"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.59"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+
+
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/black50"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/remove_photo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:src="@drawable/icon_cancel"
+            android:tint="@color/red"
+            app:layout_constraintEnd_toStartOf="@+id/cancel"
+            app:layout_constraintTop_toTopOf="@+id/cancel"
+            app:layout_constraintBottom_toBottomOf="@+id/cancel"/>
+
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Cancel"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

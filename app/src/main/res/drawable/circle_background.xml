@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Light semi-transparent white background -->
+    <solid android:color="#33FFFFFF" /> <!-- 20% opacity white -->
+
+    <corners android:radius="50dp" />
+</shape>

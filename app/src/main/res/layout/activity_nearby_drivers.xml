@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.activity.NearbyDriversActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/nearby_drivers"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNearByDrivers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+        app:spanCount="2"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_near_by_driver" />
+
+    <TextView
+        android:id="@+id/tvNoFound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/no_driver_found"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

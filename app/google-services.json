@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "662474566783",
+    "project_id": "pas-transport-e4d0d",
+    "storage_bucket": "pas-transport-e4d0d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662474566783:android:88c32dc71eed5a9075634a",
+        "android_client_info": {
+          "package_name": "com.live.pastransport"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXPhEC0b3ajnNDLxo4ToGc7nh9B00W6PA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

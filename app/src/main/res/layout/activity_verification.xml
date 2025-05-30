@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.activity.VerificationActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/icon_back" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_95sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:src="@drawable/img_splash" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/sans_semi_bold"
+            android:text="@string/verification"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_22ssp" />
+
+        <TextView
+            android:id="@+id/tvPhoneCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sans_regular"
+            android:text="@string/verification_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp" />
+
+
+        <com.chaos.view.PinView
+            android:id="@+id/otpView"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="****"
+            android:inputType="number"
+            android:itemBackground="@color/white"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cursorColor="@color/white"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="true"
+            app:itemCount="4"
+            app:itemHeight="@dimen/_40sdp"
+            app:itemRadius="@dimen/_12sdp"
+            app:itemSpacing="@dimen/_20sdp"
+            app:itemWidth="@dimen/_50sdp"
+            app:lineColor="@color/white"
+            android:layout_gravity="center"
+            app:viewType="rectangle"
+            android:layout_marginTop="@dimen/_12sdp"/>
+
+        <TextView
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/sans_regular"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text='@string/verify'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_regular"
+                android:text="@string/didn_t_receive_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/tvResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_semi_bold"
+                android:text="@string/request_again"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_2sdp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

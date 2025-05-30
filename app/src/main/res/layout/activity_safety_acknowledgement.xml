@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.activity.SafetyAcknowledgementActivity">
+    <ImageView
+        android:id="@+id/ivBackCms"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/icon_back"
+        android:layout_marginStart="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeaderCms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeaderCms" />
+
+    <TextView
+        android:id="@+id/tvHeaderCms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="Terms &amp; Safety Acknowledgement"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAccept"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderCms">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+    <WebView
+        android:id="@+id/webViewCms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/customCheckbox"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_checkbox"
+            android:fontFamily="@font/sans_regular"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tvTermsConditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_regular"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_toEndOf="@id/customCheckbox"
+            android:layout_alignParentTop="true"
+            android:includeFontPadding="false"
+            android:text='I acknowledge and agree to these terms.*'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/emergencyCheckbox"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/_13sdp"
+            android:background="@drawable/custom_checkbox"
+            android:fontFamily="@font/sans_regular"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tvEmergency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_regular"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_toEndOf="@id/emergencyCheckbox"
+            android:layout_alignParentTop="true"
+            android:includeFontPadding="false"
+            android:text='I understand that in an emergency, I must contact 911.*'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/transportCheckbox"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_checkbox"
+            android:fontFamily="@font/sans_regular"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tvTransport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_regular"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_toEndOf="@id/transportCheckbox"
+            android:layout_alignParentTop="true"
+            android:includeFontPadding="false"
+            android:text='I confirm that I am over 18 or have legal consent from a parent or guardian for transport.'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/parentConsentCheckbox"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_checkbox"
+            android:fontFamily="@font/sans_regular"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tvParentConsent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_regular"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_toEndOf="@id/parentConsentCheckbox"
+            android:layout_alignParentTop="true"
+            android:includeFontPadding="false"
+            android:text='I understand that minors under 16 require written parental consent on file with PASTransport.'
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/btnAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/i_accept"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginHorizontal="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_22sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

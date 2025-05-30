@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.activity.CMSActivity"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/ivBackCms"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/icon_back"
+        android:layout_marginStart="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeaderCms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeaderCms" />
+
+    <TextView
+        android:id="@+id/tvHeaderCms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/terms_and_conditions"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAccept"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderCms">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <WebView
+                android:id="@+id/webViewCms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/btnAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/i_accept"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginHorizontal="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_22sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

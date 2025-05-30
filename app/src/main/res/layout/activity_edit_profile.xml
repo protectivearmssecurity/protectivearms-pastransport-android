@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.activity.EditProfileActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/icon_back"
+        android:layout_marginStart="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/edit_profile"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_280sdp"
+                    android:scaleType="centerCrop"
+                    app:riv_corner_radius="@dimen/_12sdp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/edit_txt_bg"
+                    android:backgroundTint="@color/white30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivProfile" />
+
+                <ImageView
+                    android:id="@+id/ivImagePicker"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:src="@drawable/icon_camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/ivProfile"
+                    app:layout_constraintTop_toTopOf="@+id/ivProfile" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:fontFamily="@font/sans_regular"
+                android:text='@string/name'
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@drawable/edit_txt_bg"
+                android:fontFamily="@font/sans_regular"
+                android:hint="@string/enter_name"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/sans_regular"
+                android:text='@string/email'
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@drawable/edit_txt_bg"
+                android:fontFamily="@font/sans_regular"
+                android:hint="@string/enter_email"
+                android:clickable="false"
+                android:focusable="false"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/sans_regular"
+                android:text='@string/phone_number'
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <RelativeLayout
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSignupPhoneNum">
+
+                <LinearLayout
+                    android:id="@+id/llccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_txt_bg"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:orientation="horizontal">
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_showFullName="false"
+                        app:ccp_showNameCode="false"
+                        app:ccp_clickable="false"
+                        android:layout_gravity="center_vertical"
+                        app:ccp_showPhoneCode="true"
+                        app:ccp_textSize="@dimen/_11ssp" />
+
+
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/etLoginPhoneNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_txt_bg"
+                    android:fontFamily="@font/sans_regular"
+                    android:hint="@string/enter_phone_number"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:inputType="phone"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:maxLength="12"
+                    android:padding="@dimen/_10sdp"
+                    android:maxLines="1"
+                    android:layout_toEndOf="@+id/llccp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_30sdp"
+                android:background="@drawable/button_bg"
+                android:fontFamily="@font/sans_medium"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text='@string/update'
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

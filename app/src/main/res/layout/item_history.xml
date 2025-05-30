@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_2sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivMap"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_placeholder"
+            app:riv_corner_radius="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:id="@+id/llDriverSide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_placeholder"
+                    app:riv_corner_radius="@dimen/_15sdp" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/ivProfile"
+                    android:fontFamily="@font/sans_medium"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tvName"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvEstimatedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_medium"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:text="@string/estimated_arrival_time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="center"
+                            android:text="20 Jun 2023"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_3sdp"
+                            android:rotation="240"
+                            android:src="@drawable/clock" />
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="center"
+                            android:text=" 10:30 AM"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@color/black20" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/sans_semi_bold"
+                    android:gravity="center"
+                    android:text="Status:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+
+                <TextView
+                    android:id="@+id/tvDriverStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/sans_medium"
+                    android:gravity="center"
+                    android:text="Ongoing"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/_8ssp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llUserSide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivUserProfile"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_placeholder"
+                    app:riv_corner_radius="@dimen/_15sdp" />
+
+                <LinearLayout
+                    android:id="@+id/llDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/ivUserProfile"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_semi_bold"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/ratingDriver"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:progressTint="@color/orange"
+                            android:rating="4.5" />
+
+                        <TextView
+                            android:id="@+id/tvRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/sans_semi_bold"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvCarName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_regular"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp" />
+                    <TextView
+                        android:id="@+id/tvDriverType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_regular"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp" />
+                    <TextView
+                        android:id="@+id/tvCompanyName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_regular"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@+id/llDetail"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvEstimateFarePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_medium"
+                        android:gravity="center"
+                        android:text="@string/estimate_fare_price"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp" />
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_medium"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@color/black20" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_semi_bold"
+                        android:gravity="center"
+                        android:text="@string/status"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp" />
+
+                    <TextView
+                        android:id="@+id/tvUserStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:fontFamily="@font/sans_medium"
+                        android:gravity="center"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/_8ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/linearLayout6"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvUserEstimatedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_medium"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:text="@string/estimated_arrival_time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvUserDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:src="@drawable/clock" />
+
+                        <TextView
+                            android:id="@+id/tvUserTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="center"
+                            android:includeFontPadding="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

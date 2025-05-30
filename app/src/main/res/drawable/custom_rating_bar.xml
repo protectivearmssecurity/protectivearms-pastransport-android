@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background (empty star) -->
+    <item android:id="@android:id/background">
+        <bitmap
+            android:src="@drawable/star_white"
+            android:tileMode="repeat" />
+    </item>
+
+
+    <!-- Filled stars -->
+    <item android:id="@android:id/progress">
+        <bitmap
+            android:src="@drawable/star_yellow"
+            android:tileMode="repeat" />
+    </item>
+</layer-list>

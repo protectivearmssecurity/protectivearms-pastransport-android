@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.activity.StartTripDetailActivity">
+
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_margin="@dimen/_18sdp"
+        android:elevation="@dimen/_5sdp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeader"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:elevation="@dimen/_5sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/details"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_300sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mapView">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:fontFamily="@font/sans_semi_bold"
+                        android:text="Details"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/date"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/tvDate"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="end"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/time"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/tvTime"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="end"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rlEnd"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvEndTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="End Time"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            android:id="@+id/timeEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/tvEndTime"
+                            android:fontFamily="@font/sans_medium"
+                            android:gravity="end"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llFlightData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:fontFamily="@font/sans_semi_bold"
+                            android:text="Flight Details"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/tvFlightName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sans_regular"
+                                android:text="Flight Name"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <TextView
+                                android:id="@+id/tvFlightNameValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/tvFlightName"
+                                android:fontFamily="@font/sans_medium"
+                                android:gravity="end"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/tvFlightNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sans_regular"
+                                android:text="Flight Number"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <TextView
+                                android:id="@+id/tvFlightNumberValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/tvFlightNumber"
+                                android:fontFamily="@font/sans_medium"
+                                android:gravity="end"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/tvFlightArrivalTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sans_regular"
+                                android:text="Flight Arrival Time"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <TextView
+                                android:id="@+id/tvFlightArrivalTimeValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/tvFlightArrivalTime"
+                                android:fontFamily="@font/sans_medium"
+                                android:gravity="end"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/tvExitGate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sans_regular"
+                                android:text="Exit Gate Number"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <TextView
+                                android:id="@+id/tvExitGateValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/tvExitGate"
+                                android:fontFamily="@font/sans_medium"
+                                android:gravity="end"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sans_semi_bold"
+                        android:text="@string/location"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:src="@drawable/pick_up" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/route_path" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:src="@drawable/drop_off" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_semi_bold"
+                                    android:text="Pick Up"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_11ssp" />
+
+                                <TextView
+                                    android:id="@+id/tvPickUpLocation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_regular"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_9ssp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_semi_bold"
+                                    android:text="Drop Off"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_11ssp" />
+
+                                <TextView
+                                    android:id="@+id/tvDropOffLocation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_regular"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_9ssp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvTotalDistance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_toStartOf="@id/tvStatus"
+                            android:fontFamily="@font/sans_regular"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="Ongoing"
+                            android:textColor="@color/orange"
+                            android:textSize="@dimen/_10ssp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/btnStartTrip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/button_bg"
+                            android:fontFamily="@font/sans_semi_bold"
+                            android:gravity="center"
+                            android:paddingVertical="@dimen/_12sdp"
+                            android:text="@string/start_trip"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/btnCancelRide"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginBottom="@dimen/_12sdp"
+                            android:fontFamily="@font/sans_regular"
+                            android:gravity="center"
+                            android:text="@string/cancel_ride"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCompletedStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@color/white30" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_medium"
+                                    android:text="Status: "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_11ssp" />
+
+                                <TextView
+                                    android:id="@+id/tvTripStatus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_medium"
+                                    android:text="Completed"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvTripDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_medium"
+                                    android:text="20 Jun 2023"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="@dimen/_3sdp"
+                                    android:src="@drawable/time" />
+
+                                <TextView
+                                    android:id="@+id/tvTripTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_medium"
+                                    android:text="10:30 AM"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sans_medium"
+                                android:text="Rate &amp; Reviews"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:orientation="horizontal">
+
+                                <RatingBar
+                                    style="@style/Widget.AppCompat.RatingBar.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:progressTint="@color/orange"
+                                    android:rating="5" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sans_medium"
+                                    android:text="5.0 (120)"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="@font/sans_regular"
+                            android:gravity="end"
+                            android:text="@string/dummy_text"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:background="@drawable/blue_stroke_button_bg"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout4">
+
+                    <TextView
+                        android:id="@+id/tvEstimatedTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_semi_bold"
+                        android:gravity="center"
+
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/blue_stroke_button_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivProfile"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:src="@drawable/profile_placeholder" />
+
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_toEndOf="@id/ivProfile"
+                            android:fontFamily="@font/sans_semi_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivChat"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/icon_message" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

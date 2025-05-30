@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.activity.AddNewCardActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/add_new_card"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/top_rounded_bg"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnSave"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="@dimen/_13sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:fontFamily="@font/sans_regular"
+                android:text='@string/name_on_card'
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/etNameOnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@drawable/edit_txt_bg"
+                android:elevation="@dimen/_2sdp"
+                android:fontFamily="@font/sans_regular"
+                android:hint="@string/enter_name_on_card"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:fontFamily="@font/sans_regular"
+                android:text='@string/card_number'
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/etCardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@drawable/edit_txt_bg"
+                android:elevation="@dimen/_2sdp"
+                android:fontFamily="@font/sans_regular"
+                android:hint="**** **** **** 1234"
+                android:inputType="number"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:fontFamily="@font/sans_regular"
+                    android:text="@string/exp_date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/etExpDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/edit_txt_bg"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:elevation="@dimen/_2sdp"
+                    android:fontFamily="@font/sans_regular"
+                    android:hint="mm/yyyy"
+                    android:maxLines="1"
+                    android:padding="@dimen/_12sdp"
+                    android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:fontFamily="@font/sans_regular"
+                    android:text="@string/cvv"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/etCvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/edit_txt_bg"
+                    android:elevation="@dimen/_2sdp"
+                    android:fontFamily="@font/sans_regular"
+                    android:hint="***"
+                    android:maxLength="3"
+                    android:inputType="numberPassword"
+                    android:maxLines="1"
+                    android:padding="@dimen/_12sdp"
+                    android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/sans_medium"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

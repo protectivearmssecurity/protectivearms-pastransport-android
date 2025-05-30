@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.fragment.SettingFragment">
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sans_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_notification" />
+
+                <TextView
+                    android:id="@+id/tvNotification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/onOfNotification"
+                    android:layout_toEndOf="@id/ivNotification"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/notifications"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/onOfNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/onNotification"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:src="@drawable/icon_on"
+                        android:visibility="gone"
+                        app:tint="@color/button_color" />
+
+                    <ImageView
+                        android:id="@+id/ofNotification"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:src="@drawable/icon_off"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivChangePassword"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_password" />
+
+                <TextView
+                    android:id="@+id/tvChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icChangePassword"
+                    android:layout_toEndOf="@id/ivChangePassword"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/change_password"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icChangePassword"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlMyCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivMyCards"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_card" />
+
+                <TextView
+                    android:id="@+id/tvMyCards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icMyCards"
+                    android:layout_toEndOf="@id/ivMyCards"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/my_cards"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icMyCards"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlPrivacyPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivPrivacyPolicy"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_privacy" />
+
+                <TextView
+                    android:id="@+id/tvPrivacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icPrivacyPolicy"
+                    android:layout_toEndOf="@id/ivPrivacyPolicy"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icPrivacyPolicy"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlTermsConditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivTermsConditions"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_term_condition" />
+
+                <TextView
+                    android:id="@+id/tvTermsConditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icTermsConditions"
+                    android:layout_toEndOf="@id/ivTermsConditions"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/terms_and_conditions"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icTermsConditions"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivAboutUs"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_about_us" />
+
+                <TextView
+                    android:id="@+id/tvAboutUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icAboutUs"
+                    android:layout_toEndOf="@id/ivAboutUs"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/about_us"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icAboutUs"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlContactSupport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivContactSupport"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_contact" />
+
+                <TextView
+                    android:id="@+id/tvContactSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icContactSupport"
+                    android:layout_toEndOf="@id/ivContactSupport"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/contact_support"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icContactSupport"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+
+            <RelativeLayout
+                android:id="@+id/rlDeleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivDeleteAccount"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_delete" />
+
+                <TextView
+                    android:id="@+id/tvDeleteAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toStartOf="@id/icDeleteAccount"
+                    android:layout_toEndOf="@id/ivDeleteAccount"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/delete_account"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ImageView
+                    android:id="@+id/icDeleteAccount"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="180"
+                    android:src="@drawable/icon_back" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white30" />
+            <RelativeLayout
+                android:id="@+id/rlLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivLogOut"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_logout" />
+
+                <TextView
+                    android:id="@+id/tvLogOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/ivLogOut"
+                    android:fontFamily="@font/sans_regular"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/log_out"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
