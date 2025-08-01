@@ -76,6 +76,7 @@ class SignUpActivity : CameraActivity() {
                                 if (result.code == 200) {
                                     startActivity(
                                         Intent(this, VerificationActivity::class.java).apply {
+                                            putExtra("email", binding.etEmail.text.toString())
                                             putExtra("phone", binding.etLoginPhoneNum.text.toString())
                                             putExtra("country_code", binding.ccp.selectedCountryCodeWithPlus.toString())
                                         }

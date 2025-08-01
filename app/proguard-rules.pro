@@ -88,3 +88,22 @@
 # ==============================
 # 🚀 End of ProGuard Rules
 # ==============================
+# Please add these rules to your existing keep rules in order to suppress warnings.
+# This is generated automatically by the Android Gradle plugin.
+-dontwarn com.google.crypto.tink.subtle.XChaCha20Poly1305
+-dontwarn com.stripe.android.connections.ConnectionsSheet$Configuration
+-dontwarn com.stripe.android.connections.ConnectionsSheet
+-dontwarn com.stripe.android.connections.ConnectionsSheetResult$Canceled
+-dontwarn com.stripe.android.connections.ConnectionsSheetResult$Completed
+-dontwarn com.stripe.android.connections.ConnectionsSheetResult$Failed
+-dontwarn com.stripe.android.connections.ConnectionsSheetResult
+-dontwarn com.stripe.android.connections.ConnectionsSheetResultCallback
+-dontwarn com.stripe.android.connections.model.LinkAccountSession
+-dontwarn javax.naming.NamingEnumeration
+-dontwarn javax.naming.NamingException
+-dontwarn javax.naming.directory.Attribute
+-dontwarn javax.naming.directory.Attributes
+-dontwarn javax.naming.directory.DirContext
+-dontwarn javax.naming.directory.InitialDirContext
+-dontwarn javax.naming.directory.SearchControls
+-dontwarn javax.naming.directory.SearchResult

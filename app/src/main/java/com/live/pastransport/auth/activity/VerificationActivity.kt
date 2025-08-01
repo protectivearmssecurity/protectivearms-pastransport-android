@@ -29,6 +29,7 @@ class VerificationActivity : AppCompatActivity() {
     private val authViewModel by viewModels<AuthViewModel>()
     private lateinit var binding: ActivityVerificationBinding
 
+    private var email: String = ""
     private var phone: String = ""
     private var countryCode: String = ""
 
@@ -44,6 +45,7 @@ class VerificationActivity : AppCompatActivity() {
             showStaticOtpAlert()
         }
 
+        email = intent.getStringExtra("email").orEmpty()
         phone = intent.getStringExtra("phone").orEmpty()
         countryCode = intent.getStringExtra("country_code").orEmpty()
 
@@ -52,7 +54,7 @@ class VerificationActivity : AppCompatActivity() {
     }
 
     private fun showStaticOtpAlert() {
-        Utils.successAlert(this, "Please enter static OTP 1111")
+        Utils.successAlert(this, getString(R.string.verification_content) + " $email")
     }
 
     private fun observeViewModel() {
@@ -98,7 +100,7 @@ class VerificationActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun setClickListeners() {
         binding.apply {
-            tvPhoneCode.text = getString(R.string.verification_content) + " $countryCode$phone"
+            tvPhoneCode.text = getString(R.string.verification_content) + " $email"
 
             btnVerify.setOnClickListener {
                 val map = hashMapOf(

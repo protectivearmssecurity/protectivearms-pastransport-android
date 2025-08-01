@@ -5,7 +5,7 @@
     <!--    easy key -->
     <!--    <string name="api_key_map">AIzaSyB10nBoU7Ids0xDe6W00Vo5-O77dXKi0AA</string>-->
     <!-- Muve -->
-<!--    <string name="api_key_map">AIzaSyC_qU7-uv2wskhWcEp07VAALy-nMrVLOrI</string>-->
+    <!--    <string name="api_key_map">AIzaSyC_qU7-uv2wskhWcEp07VAALy-nMrVLOrI</string>-->
     <string name="api_key_map">AIzaSyAYhgf_1NDnhRVkFs8VCK4Qmg4dtAfaEfA</string>
     <string name="please_select_date_first">Please select a date first</string>
 

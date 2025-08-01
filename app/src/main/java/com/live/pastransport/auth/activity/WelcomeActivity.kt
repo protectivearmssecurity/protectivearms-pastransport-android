@@ -11,24 +11,22 @@ import android.provider.Settings
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-
 import com.live.pastransport.R
 import com.live.pastransport.adapter.CustomAdapter
-import com.live.pastransport.databinding.ActivityWelcomeBinding
 import com.live.pastransport.auth.fragment.WelcomeFragment1
 import com.live.pastransport.auth.fragment.WelcomeFragment2
 import com.live.pastransport.auth.fragment.WelcomeFragment3
+import com.live.pastransport.auth.fragment.WelcomeFragment4
+import com.live.pastransport.auth.fragment.WelcomeFragment5
+import com.live.pastransport.databinding.ActivityWelcomeBinding
 import com.live.pastransport.utils.applyFadeTransition
 import com.live.pastransport.utils.gone
 import com.live.pastransport.utils.visible
@@ -60,6 +58,28 @@ class WelcomeActivity : AppCompatActivity() {
                 // You can proceed with posting notifications
             }
         }
+        val pages = listOf(
+            Pair(
+                "Secure Transport, On-Demand",
+                "Request a ride with trained protection specialists, available when and where you need safety most."
+            ),
+            Pair(
+                "Armed & Unarmed Professionals",
+                "Every driver is a licensed security officer, equipped to handle high-risk environments and personal protection needs."
+            ),
+            Pair(
+                "Real-Time GPS & Support",
+                "Track your ride live and stay connected with our dispatch team. Peace of mind begins the moment you book."
+            ),
+            Pair(
+                "Trusted Transport for Schools & Families",
+                "PAS Transport specializes in safe travel for students and families. Background-checked professionals. Always on time."
+            ),
+            Pair(
+                "Corporate & VIP Security Logistics",
+                "From executive transport to site-to-site movement, our secure rides are tailored for professionals who can't afford risk."
+            )
+        )
 
         viewPager2 = findViewById(R.id.viewPaser)
         val tvNext = findViewById<ImageView>(R.id.btnNext)
@@ -68,13 +88,15 @@ class WelcomeActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(R.drawable.blur_bg)  // Replace with your image resource or URL
-            .transform(BlurTransformation(30),)  // Set the blur radius (adjust as needed)
+            .transform(BlurTransformation(30))  // Set the blur radius (adjust as needed)
             .into(imageView)
 
         val fragments: ArrayList<Fragment> = arrayListOf(
             WelcomeFragment1(),
             WelcomeFragment2(),
-            WelcomeFragment3()
+            WelcomeFragment3(),
+            WelcomeFragment4(),
+            WelcomeFragment5()
         )
         val adapter = CustomAdapter(fragments, this)
         viewPager2.adapter = adapter
@@ -96,6 +118,9 @@ class WelcomeActivity : AppCompatActivity() {
                 Log.e("Selected_Page", position.toString())
 
                 setIndicator(position)
+                val (title, description) = pages[position]
+                updateTextWithFade(title, description)
+
 
             }
 
@@ -109,7 +134,16 @@ class WelcomeActivity : AppCompatActivity() {
                 1 -> {
                     viewPager2.currentItem = pageAddress
                 }
+
                 2 -> {
+                    viewPager2.currentItem = pageAddress
+                }
+
+                3 -> {
+                    viewPager2.currentItem = pageAddress
+                }
+
+                4 -> {
                     viewPager2.currentItem = pageAddress
                 }
 
@@ -125,6 +159,19 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
     }
+
+    fun updateTextWithFade(title: String, description: String) {
+        binding.tvTitle.animate().alpha(0f).setDuration(150).withEndAction {
+            binding.tvTitle.text = title
+            binding.tvTitle.animate().alpha(1f).setDuration(150).start()
+        }.start()
+
+        binding.tvDescription.animate().alpha(0f).setDuration(150).withEndAction {
+            binding.tvDescription.text = description
+            binding.tvDescription.animate().alpha(1f).setDuration(150).start()
+        }.start()
+    }
+
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun requestNotificationPermission() {
         // Register the permissions callback, which handles the user's response to the
@@ -163,29 +210,60 @@ class WelcomeActivity : AppCompatActivity() {
                 ).show()
             }.show()
     }
-    private fun setIndicator(position: Int){
+
+    private fun setIndicator(position: Int) {
+        // Hide all selected and unselected indicators first
         binding.selectedView1.gone()
         binding.selectedView2.gone()
         binding.selectedView3.gone()
+        binding.selectedView4.gone()
+        binding.selectedView5.gone()
         binding.unSelectedView1.gone()
         binding.unSelectedView2.gone()
         binding.unSelectedView3.gone()
+        binding.unSelectedView4.gone()
+        binding.unSelectedView5.gone()
 
-        when(position){
-            0 ->{
+        // Show selected and unselected indicators based on position
+        when (position) {
+            0 -> {
                 binding.selectedView1.visible()
                 binding.unSelectedView2.visible()
                 binding.unSelectedView3.visible()
+                binding.unSelectedView4.visible()
+                binding.unSelectedView5.visible()
             }
-            1 ->{
+
+            1 -> {
                 binding.selectedView2.visible()
                 binding.unSelectedView1.visible()
                 binding.unSelectedView3.visible()
+                binding.unSelectedView4.visible()
+                binding.unSelectedView5.visible()
             }
-            2 ->{
+
+            2 -> {
                 binding.selectedView3.visible()
                 binding.unSelectedView1.visible()
                 binding.unSelectedView2.visible()
+                binding.unSelectedView4.visible()
+                binding.unSelectedView5.visible()
+            }
+
+            3 -> {
+                binding.selectedView4.visible()
+                binding.unSelectedView1.visible()
+                binding.unSelectedView2.visible()
+                binding.unSelectedView3.visible()
+                binding.unSelectedView5.visible()
+            }
+
+            4 -> {
+                binding.selectedView5.visible()
+                binding.unSelectedView1.visible()
+                binding.unSelectedView2.visible()
+                binding.unSelectedView3.visible()
+                binding.unSelectedView4.visible()
             }
         }
     }
